@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalMessageComponent } from 'src/app/shared/modals/modal-message/modal-message.component';
+import { ModalMessageComponent } from '../../shared/modals/modal-message/modal-message.component';
 import { HttpServeService } from '../../shared/services/http-serve.service';
 import { UtilsService } from '../../shared/services/utils.service';
 
