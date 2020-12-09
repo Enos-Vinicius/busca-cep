@@ -9,9 +9,9 @@ Foram usadas as bibliotecas externas:
 
 ## Informações para Desenvolvedor
 Passos para rodar o projeto: 
-  1) - Baixar o repositório para máquina.
-  2) - Como a versão usada para criação do projeto é Angular 11, é necessários estar com a versão pelo menos local do angular-cli atualizada para dar o npm install.
-  3) - Após isso só rodar o projeto: ng serve
+  1) Baixar o repositório para máquina.
+  2) Como a versão usada para criação do projeto é Angular 11, é necessários estar com a versão pelo menos local do angular-cli atualizada para dar o npm install.
+  3) Após isso só rodar o projeto: ng serve
 
 Mas para não ter o trabalho de fazer todas as configurações locais para rodar o projeto, também é possível acessar o mesmo no stackblitz, através desse link (https://stackblitz.com/github/Enos-Vinicius/busca-cep)
 
