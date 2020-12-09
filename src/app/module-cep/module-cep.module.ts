@@ -22,7 +22,8 @@ import { ModalMessageComponent } from '../shared/modals/modal-message/modal-mess
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [
+  entryComponents: [
+    ModalMessageComponent
   ]
 })
 export class ModuleCepModule { }

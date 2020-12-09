@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialSharedModule } from './shared/modules/material-shared/material-shared.module';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalMessageComponent } from './shared/modals/modal-message/modal-message.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialSharedModule,
     HttpClientModule
   ],
-  providers: [],
+  entryComponents: [
+    ModalMessageComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
