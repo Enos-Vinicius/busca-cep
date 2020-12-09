@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+
+$PRIMARY_COLOR: #670000;
+$SECOND_COLOR: #D7DBDD;
+
+header {
+    width: 100%;
+    margin: auto;
+    background-color: $PRIMARY_COLOR;
+    color: $SECOND_COLOR;
+    padding: 10px;
+}
+
+section {
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: $SECOND_COLOR;
+    position: fixed;
+    bottom: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+

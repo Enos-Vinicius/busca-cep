@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'busca-cep';
+
+  sendSite(){
+    window.open('https://www.sccon.com.br/', '_blank');
+  }
 }

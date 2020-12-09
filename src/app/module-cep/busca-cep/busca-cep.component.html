@@ -1,0 +1,30 @@
+<mat-card class="mg-1">
+    <strong>
+        Buscar Endereços
+    </strong>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <form [formGroup]="cepForm" class="form">
+            <mat-form-field class="form" appearance="outline">
+                <mat-label>CEP</mat-label>
+                <input formControlName="cep" maxlength="9" cepMask matInput placeholder="Buscar por CEP">
+                
+                <mat-error *ngIf="cepFormControls.cep.hasError('required')">
+                    Por favor prencha o campo
+                  </mat-error>
+                  <mat-error *ngIf="cepFormControls.cep.hasError('minlength')">
+                    Quantidade minima de caracteres não informada!
+                  </mat-error>
+            </mat-form-field>
+        </form>
+        <button mat-flat-button class="btn-buscar" [disabled]="cepForm.invalid" (click)="getCep()" color="warn">Buscar</button>
+    </div>
+</mat-card>
+
+<!-- Load -->
+<mat-card *ngIf="loadSpinner" class="mg-1" fxLayout="row" fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+</mat-card>
+
+<app-table *ngIf="!loadSpinner"></app-table>
+          
+

@@ -1,0 +1,11 @@
+<div class="cursor-pointer">
+    <img src="assets/logo-sccon-header.png" alt="Logomarca SCCON" (click)="sendSite()">
+</div>
+<div class="mr-1">
+    <button mat-button routerLink="home">Home</button>
+    <button mat-button [matMenuTriggerFor]="menu">Endereços</button>
+
+    <mat-menu #menu="matMenu" yPosition="below">
+        <button routerLink="cep" mat-menu-item>Busca Cep</button>
+    </mat-menu>
+</div>
