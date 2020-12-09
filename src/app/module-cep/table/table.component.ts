@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UtilsService } from '../../shared/services/utils.service';
 
 export interface PeriodicElement {
@@ -30,24 +30,20 @@ export class TableComponent implements OnInit {
     this.getList();
   }
 
-/*
-*@params {number} the selected address id
-*@return {void}
-*/
-removeItemList(id: number) : void {
-  //What are you doing here?
-  let index;
-  for(let i in this.listCep){
-    if(this.listCep[i]['id'] === id){
-      index = i;
+  removeItemList(id: number) : void {
+
+    let index;
+    for(let i in this.listCep){
+      if(this.listCep[i]['id'] === id){
+        index = i;
+      }
     }
+
+    this.listCep.splice(index, 1);
+    this.util.clearLocalStorage();
+    this.util.setList(this.listCep);
+    this.getList();
   }
-  //Explain why you are doing this calls...
-  this.listCep.splice(index, 1);
-  this.util.clearLocalStorage();
-  this.util.setList(this.listCep);
-  this.getList();
-}
 
   getList() : void {
     let lista = JSON.parse(localStorage.getItem('lista'));

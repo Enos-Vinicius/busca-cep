@@ -10,3 +10,9 @@ table.mat-table {
 .mat-cell {
     padding: 8px;
 }
+
+.cl-table {
+    max-height: 500px;
+    overflow-x: auto;
+}
+

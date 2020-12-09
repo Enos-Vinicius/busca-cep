@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalMessageComponent } from 'src/app/shared/modals/modal-message/modal-message.component';
 import { HttpServeService } from '../../shared/services/http-serve.service';
 import { UtilsService } from '../../shared/services/utils.service';
-
 
 @Component({
   selector: 'app-busca-cep',
@@ -19,7 +19,8 @@ export class BuscaCepComponent implements OnInit {
   constructor(
     private http: HttpServeService,
     private formBuilder: FormBuilder,
-    private util: UtilsService
+    private util: UtilsService,
+    private matDialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +31,6 @@ export class BuscaCepComponent implements OnInit {
     this.cepForm = this.formBuilder.group({
       cep: ['',[Validators.required, Validators.minLength(9)]]
     })
-
   }
 
   get cepFormControls(){
@@ -49,9 +49,11 @@ export class BuscaCepComponent implements OnInit {
             ...result,
             data: this.util.getDateTime()
           });
-        }
-        this.util.clearLocalStorage();
-        this.util.setList(this.cepArr);
+          this.util.clearLocalStorage();
+          this.util.setList(this.cepArr);
+        } else {
+          this.openModal();
+        } 
         this.buildForm();
         this.loadSpinner = false;
       },
@@ -59,6 +61,12 @@ export class BuscaCepComponent implements OnInit {
         this.loadSpinner = false;
       }
     )
+  }
+
+  openModal(){
+    this.matDialog.open(ModalMessageComponent, {
+      data: { title: 'ATENÇÃO', message: 'CEP Não Encontrado junto aos correios!' }
+    });
   }
 
 }

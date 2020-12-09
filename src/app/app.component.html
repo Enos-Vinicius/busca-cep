@@ -1,12 +1,35 @@
 
-<header>
-  <app-menu fxLayout="row" fxLayoutAlign="space-between center"></app-menu>
+<header fxLayout="row" fxLayoutAlign="center center">
+  <app-menu class="menu-area" fxLayout="row" fxLayoutAlign="space-between center"></app-menu>
 </header>
 
 <section>
   <router-outlet></router-outlet>
 </section>
 
-<footer fxLayout="row" fxLayoutAlign="center end">
+<footer fxLayout="row" fxLayoutAlign="space-around center">
+  <div fxLayout="column" fxLayoutAlign="start">
+    <span>Copyright © 2020 | Enos Vinicius da Cunha Silva</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start">
+      <a href="https://www.linkedin.com/in/enos-silva-b15555a9/" target="_blank">
+        <img src="https://img.icons8.com/cute-clipart/36/000000/linkedin.png"/>
+      </a> 
 
+      <a href="https://github.com/Enos-Vinicius" target="_blank">
+        <img src="https://img.icons8.com/cute-clipart/36/000000/github.png"/>
+      </a> 
+
+      <a href="https://www.facebook.com/enos.vinicius" target="_blank">
+        <img src="https://img.icons8.com/cute-clipart/36/000000/facebook-new.png"/>
+      </a> 
+
+      <a href="https://www.instagram.com/enosvinicius/?hl=pt-br" target="_blank">
+        <img src="https://img.icons8.com/cute-clipart/36/000000/instagram-new.png"/>
+      </a> 
+
+      <a href="mailto:enosviniciusda@gmail.com" target="_blank">
+        <img src="https://img.icons8.com/cute-clipart/36/000000/gmail.png"/>
+      </a> 
+  </div>
 </footer>

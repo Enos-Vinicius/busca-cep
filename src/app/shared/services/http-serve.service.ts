@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class HttpServeService {
 
-  viacep = 'http://viacep.com.br/ws/';
+  viacep = 'https://viacep.com.br/ws/';
 
   constructor(
     private http: HttpClient

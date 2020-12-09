@@ -15,12 +15,6 @@ export class CepDirective {
 
   constructor() { }
 
-  @HostListener('keydown', ['$event'])
-  onKeydown($event: any) {
-    this.ignoreSome($event);
-  }
-
-
   @HostListener('keyup', ['$event'])
   onKeyup($event: any) {
     const value = $event.target.value.replace(/\D/g, '');
@@ -71,40 +65,6 @@ export class CepDirective {
 
     return value;
 
-  }
-
-
-  ignoreSome(event) {
-    if (event.key !== undefined) {
-      const k = event.key;
-      if (
-        !event.ctrlKey &&
-        !event.metaKey &&
-        k !== '0' &&
-        k !== '1' &&
-        k !== '2' &&
-        k !== '3' &&
-        k !== '4' &&
-        k !== '5' &&
-        k !== '6' &&
-        k !== '7' &&
-        k !== '8' &&
-        k !== '9' &&
-        k !== 'Backspace' &&
-        k !== 'Tab' &&
-        k !== 'Delete' &&
-        k !== 'ArrowLeft' &&
-        k !== 'ArrowRight'
-      ) {
-        event.preventDefault();
-      }
-    } else if (event.keyCode !== undefined) {
-      const k = event.keyCode;
-      if (k === 32 || // space
-        k < 48 || k > 57) {
-        event.preventDefault();
-      }
-    }
   }
 
 }
