@@ -52,6 +52,7 @@ export class BuscaCepComponent implements OnInit {
         }
         this.util.clearLocalStorage();
         this.util.setList(this.cepArr);
+        this.buildForm();
         this.loadSpinner = false;
       },
       err => {
