@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { HttpServeService } from 'src/app/shared/services/http-serve.service';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { HttpServeService } from '../../shared/services/http-serve.service';
+import { UtilsService } from '../../shared/services/utils.service';
 
 
 @Component({

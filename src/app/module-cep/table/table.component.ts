@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UtilsService } from '../../shared/services/utils.service';
 
 export interface PeriodicElement {
   name: string;
