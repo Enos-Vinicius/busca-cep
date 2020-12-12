@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UtilsService } from '../../shared/services/utils.service';
 
 export interface PeriodicElement {
@@ -21,6 +21,7 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = ['cep', 'logradouro', 'data', 'acoes'];
   listCep = ELEMENT_DATA;
   loadSpinner: boolean = false;
+  @Output() onLoadList: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private util: UtilsService
@@ -42,6 +43,7 @@ export class TableComponent implements OnInit {
     this.listCep.splice(index, 1);
     this.util.clearLocalStorage();
     this.util.setList(this.listCep);
+    this.onLoadList.emit(this.listCep)
     this.getList();
   }
 

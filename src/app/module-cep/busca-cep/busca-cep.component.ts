@@ -69,4 +69,8 @@ export class BuscaCepComponent implements OnInit {
     });
   }
 
+  getList(lista) : void {
+    this.cepArr =  lista;
+  }
+
 }

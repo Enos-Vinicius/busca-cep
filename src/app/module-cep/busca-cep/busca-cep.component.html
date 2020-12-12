@@ -23,6 +23,6 @@
 </mat-card>
 
 <!-- Componente de Lista -->
-<app-table *ngIf="!loadSpinner"></app-table>
+<app-table *ngIf="!loadSpinner" (onLoadList)="getList($event)"></app-table>
           
 
